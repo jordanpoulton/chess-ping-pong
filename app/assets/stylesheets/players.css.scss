@@ -1,3 +1,21 @@
 // Place all the styles related to the Players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#league_table {
+  border: 2px solid #efefef;
+  display: inline-block;
+  padding:25px;
+}
+
+#new_player {
+  border: 2px solid black;
+  display: inline-block;
+  padding: 30px;
+}
+
+#new_match {
+  border: 2px solid black;
+  display: inline-block;
+  padding: 30px;
+}

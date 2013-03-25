@@ -6,5 +6,3 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Player.create(:name => "Jordan", :rating => 1613)
-Player.create(:name => "Leo", :rating => 1413)

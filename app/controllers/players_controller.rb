@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
   end
 
   def index
-    @players = Player.all
+    @players = Player.all.sort {|a,b| b.rating<=>a.rating}
     @player = Player.new
     @match = Match.new
   end

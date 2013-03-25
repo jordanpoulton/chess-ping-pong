@@ -1,43 +1,46 @@
   <h1> Konichiwaaa, young Wiff Waffer </h1>
+  <div id="league_table"> <strong>League Table</strong>
+    <% @players.each do |player| %>
+    <p id="league_table_contents">
+      <%= player.name + "'s Rating is:  #{player.rating.to_s}" %>
+    </p>
+    <% end %>
+  </div>
 
-  <% @players.each do |player| %>
-  <p>
-  <%= player.name + "'s Rating is:  #{player.rating.to_s}" %>
-  </p>
+    <div id="new_player">
+      <%= form_for(@player) do |f| %>
+        <div class="field">
+          <%= f.label :Create_a_new_player %><br />
+          <%= f.text_field :name %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Go" %>
+        </div>
+      <% end %>
+    </div>
+
+  <div id="new_match"> Add a Match!
+  <%= form_for(@match) do |f| %>
+    <div class="field">
+      <%= f.label :player%>
+      <%= f.select :player, @players.map{|p| [p.name, p.id]} %><br />
+    </div>
+    <div class="field">
+      <%= f.label :opponent%>
+      <%= f.select :opponent, @players.map{|p| [p.name, p.id]} %><br />
+    </div>
+    <div class="field">
+      <%= label_tag :player_wins %><br />
+      <%= text_field_tag :player_wins %>
+    </div>
+    <div class="field">
+      <%= label_tag :opponent_wins %><br />
+      <%= text_field_tag :opponent_wins %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   <% end %>
+  </div>
 
-  <p>
-    <%= form_for(@player) do |f| %>
-      <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-      </div>
-    <% end %>
-  </p>
-
-    <p>
-    <%= form_for(@match) do |f| %>
-      <div class="field">
-        <%= f.label :player%>
-        <%= f.select :player, @players.map{|p| [p.name, p.id]} %><br />
-      </div>
-      <div class="field">
-        <%= f.label :opponent%>
-        <%= f.select :opponent, @players.map{|p| [p.name, p.id]} %><br />
-      </div>
-      <div class="field">
-        <%= label_tag :player_wins %><br />
-        <%= text_field_tag :player_wins %>
-      </div>
-      <div class="field">
-        <%= label_tag :opponent_wins %><br />
-        <%= text_field_tag :opponent_wins %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-      </div>
-    <% end %>
-  </p>
+  <%= link_to "View Recent Matches", matches_path %>

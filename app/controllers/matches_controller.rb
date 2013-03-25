@@ -3,6 +3,10 @@ class MatchesController < ApplicationController
   def new
   end
 
+  def index
+    @matches = Match.all
+  end
+
   def create
     player_wins   = params[:player_wins].to_i
     opponent_wins = params[:opponent_wins].to_i
