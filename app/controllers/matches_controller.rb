@@ -1,6 +1,8 @@
 class MatchesController < ApplicationController
 
   def new
+    @match = Match.new
+    @players = Player.all
   end
 
   def index

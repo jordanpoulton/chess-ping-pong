@@ -12,4 +12,35 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require_tree
+
+
+//////Animate the paddles on the pong image. ONE DONE SO FAR
+
+
+/////Create a modal for the page
+
+
+// var modal = (function(){
+//   var
+//   method = {},
+//   $overlay,
+//   $modal,
+//   $content,
+//   $close;
+
+//   //centre the modal
+//   method.center = function (){};
+
+//   //Open the modal
+//   method.open = function (settings) {};
+
+//   //Close the modal
+//   method.close = function () {};
+
+//   return method;
+
+// }());
+
+// $overlay = $('<div id="overlay-rankings"></div>');
+// $modal = $('<div id="modal-rankings"></div>');

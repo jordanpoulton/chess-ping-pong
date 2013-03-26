@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url(http://fonts.googleapis.com/css?family=Play:400,700|Press+Start+2P);
-
+//Two available fonts now: Play and Press Start 2P;
 
 #league_table {
   border: 2px solid #efefef;
@@ -25,7 +25,7 @@
 
 * {
   color:white;
-  font-family: 'Play';
+  font-family:'Press Start 2P';;
 }
 
 
@@ -40,10 +40,11 @@ html, body {
 h1#title {
   font-family: 'Press Start 2P';
   font-weight: 400;
+  font-size: 3em;
   text-align: center;
 }
 
-h2#subtitle {
+h4#subtitle {
   font-family: 'Press Start 2P';
   font-weight: 400;
   text-align: center;
@@ -52,13 +53,26 @@ h2#subtitle {
 div.home_page_options {
   text-align: center;
   display: inline;
-  padding: 20px 0;
   width: 100%;
-
+  font-size: 1.2em;
+  padding: 15px 40px;
+  margin-top: 20px;
+  font-family: 'Press Start 2P';
 }
+
+div.home_page_options a:link {
+  text-decoration: none;
+}
+
+div.home_page_options a:hover {
+  font-size: 1.5em;
+}
+
+
 div#options-wrapper {
   width: 100%;
   text-align: center;
+  padding-top: 25px;
 }
 
 div#pong-court {
@@ -66,13 +80,13 @@ div#pong-court {
   height: 60%;
   position: relative;
   margin: 0 auto;
-  border-top: 15px solid white;
-  border-bottom: 15px solid white;
+  border-top: 15px solid #5dfc0a;
+  border-bottom: 15px solid #5dfc0a;
 }
 
 div#pong-net {
   text-align: center;
-  border-right: 10px dotted white;
+  border-right: 10px dotted #5dfc0a;
   height: 100%;
   position: absolute;
   top: 0;
@@ -85,7 +99,7 @@ div#pong-net {
 div#paddle-1 {
   width: 20px;
   height: 100px;
-  background-color: white;
+  background-color: #5dfc0a;
   position: absolute;
   left: 0;
   top: 68%;
@@ -94,8 +108,56 @@ div#paddle-1 {
 div#paddle-2 {
   width: 20px;
   height: 100px;
-  background-color: white;
+  background-color: #5dfc0a;
   position: absolute;
   right: 0;
   top: 7%;
+}
+div#ball {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  right: 65%;
+  bottom: 27%;
+}
+
+div#overlay-rankings {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  filter:alpha(opacity=50);
+}
+
+div#modal-rankings {
+  position: absolute;
+  background-color: white;
+  background:rgba(0,0,0,0.2);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+div#ranking-content {
+  border-radius: 8px;
+  background: #fff;
+  padding: 20px;
+}
+
+div#close {
+  position: absolute;
+  background-color:blue;
+  width: 24px;
+  height: 27px;
+  display:block;
+  text-indent: -9999px;
+  top: -7px;
+  right:-7px;
+}
+
+#dialog-message {
+  display: none;
 }

@@ -1,0 +1,12 @@
+<div id="new_player">
+  <%= form_for(@player) do |f| %>
+    <div class="field">
+      <%= f.label :Create_a_new_player %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Go" %>
+    </div>
+  <% end %>
+</div>
+

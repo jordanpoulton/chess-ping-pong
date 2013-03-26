@@ -1,9 +1,26 @@
 <h1 id="title"> Konichiwaaa, young Wiff Waffer </h1>
-<div id="recent_match_table"> <strong>League Table</strong>
-  <% @matches.each do |match| %>
-  <p id="recent_match_table_contents">
-    <%= match.player.name + ":" + match.opponent.name %>
-    <%= match.player.won?(match) ? "--> #{match.player.name} won" : "-->#{match.opponent.name} won" %>
-  </p>
-  <% end %>
+
+
+<div id="recent_match_table">
+  <strong>World Rankings</strong>
+
+  <table>
+    <thead>
+      <tr>
+        <th> name </th>
+        <th> rating </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <% @matches.each do |match| %>
+        <tr>
+        <td><%= match.player.name %></td>
+        <td><%= match.opponent.name %></td>
+        <td><%= match.player.won?(match) ? "--> #{match.player.name} won" : "-->#{match.opponent.name} won" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

@@ -1,6 +1,7 @@
 ChessPingPong::Application.routes.draw do
 
   root :to => 'players#index'
+  match "world_ranking" => "players#world_ranking"
 
 
   resources :players

@@ -1,0 +1,11 @@
+  <div id="league_table"> <strong>League Table</strong>
+    <% @players.each do |player| %>
+    <p id="league_table_contents">
+      <%= player.name %>  <%= "#{player.rating.to_s}" %>
+    </p>
+    <% end %>
+  </div>
+
+
+
+  <%= link_to "View Recent Matches", matches_path %>

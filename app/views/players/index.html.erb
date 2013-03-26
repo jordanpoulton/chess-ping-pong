@@ -1,22 +1,30 @@
-  <h1 id="title"> Konichiwaaa, young Wiff Waffer </h1>
-  <h2 id='subtitle'> International Ping Pong Rankings </h2>
+  <h1 id="title"> International Ping Pong Rankings </h1>
+  <h4 id='subtitle'> Konichiwaaa, young Wiff Waffer </h4>
 <!--
   #img: pong TAble - link to create game
 
   links along bottom - league, add game, sign-up -->
 
 
-<img src="">
-
-
 <div id="pong-court">
   <div id="paddle-1"></div>
   <div id="pong-net"></div>
   <div id="paddle-2"></div>
+  <div id="ball"></div>
 </div>
 
 <div id="options-wrapper">
-  <div class="home_page_options"><%= link_to "World Rankings", "" %></div>
-  <div class="home_page_options"><%= link_to "Add a game", "" %></div>
-  <div class="home_page_options"><%= link_to "Create new player", "" %></div>
+  <div class="home_page_options"><%= link_to "World Rankings", world_ranking_path, :id => 'world-rankings' %></div>
+  <div class="home_page_options"><%= link_to "Add a game", new_match_path %></div>
+  <div class="home_page_options"><%= link_to "Create new player", new_player_path %></div>
 </div>
+
+<%= render :partial => "world_rankings_dialog" %>
+
+<!-- <div id="overlay-rankings"></div>
+
+<div id="modal-rankings">
+  <div id="ranking-content"> No JS yet!</div>
+  <a href='#' id="close"> close </a>
+</div>
+ -->
