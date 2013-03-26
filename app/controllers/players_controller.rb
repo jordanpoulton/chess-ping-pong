@@ -12,8 +12,8 @@ class PlayersController < ApplicationController
   end
 
   def index
-    @players = Player.all.sort {|a,b| b.rating<=>a.rating}
-    @player = Player.new
+    @players = Player.limit(10).sort {|a,b| b.rating<=>a.rating}
+    # @player = Player.new
     @match = Match.new
   end
 

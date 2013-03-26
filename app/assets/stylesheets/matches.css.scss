@@ -1,3 +1,82 @@
 // Place all the styles related to the Matches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#form_for_new_match {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  font-size: 2em
+}
+
+#player_1_input{
+  position: absolute;
+  left: 0px;
+  width: 280px;
+  height: 100px;
+}
+
+#match_player{
+  margin-top: 5%;
+  color: #5dfc0a;
+  background-color: black;;
+}
+
+#match_opponent{
+  margin-top: 5%;
+  color: #5dfc0a;
+  background-color: black;
+}
+
+#player_2_input{
+  position: absolute;
+  right: 0px;
+  width: 280px;
+  height: 100px;
+}
+
+#player_1_wins{
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  width: 280px;
+  height: 100px;
+}
+
+#player_2_wins{
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  width: 280px;
+  height: 100px;
+}
+
+#match_submit{
+  position: relative;
+  color: #5dfc0a;
+  background-color: black;
+  border: 1px solid #5dfc0a;
+  height: 5em;
+  width: auto;
+  margin-top: 30%;
+  font-size: 1em;
+}
+
+#opponent_wins {
+  width: 30%;
+  height: 50%;
+  margin-top: 5%;
+  background-color: black;
+  color: #5dfc0a;
+  font-size: 2em;
+}
+
+#player_wins {
+  width: 30%;
+  height: 50%;
+  margin-top: 5%;
+  background-color: black;
+  color: #5dfc0a;
+  font-size: 2em;
+}

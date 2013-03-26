@@ -1,32 +1,33 @@
-
+<h4> Log a match </h4>
 
 <div id="pong-court">
   <div id="paddle-1"></div>
   <div id="pong-net"></div>
   <div id="paddle-2"></div>
   <div id="ball"></div>
-</div>
 
-<div id="new_match"> Add a Match!
-<%= form_for(@match) do |f| %>
-  <div class="field">
+
+  <div id="form_for_new_match">
+    <%= form_for(@match) do |f| %>
+  <div id="player_1_input">
     <%= f.label :player%>
-    <%= f.select :player, @players.map{|p| [p.name, p.id]} %><br />
-  </div>
-  <div class="field">
-    <%= f.label :opponent%>
-    <%= f.select :opponent, @players.map{|p| [p.name, p.id]} %><br />
-  </div>
-  <div class="field">
-    <%= label_tag :player_wins %><br />
-    <%= text_field_tag :player_wins %>
-  </div>
-  <div class="field">
-    <%= label_tag :opponent_wins %><br />
-    <%= text_field_tag :opponent_wins %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+
+    <%= f.select :player, @players.map{|p| [p.name, p.id]} %></div>
+    <div id="player_2_input">
+      <%= f.label :opponent%>
+      <%= f.select :opponent, @players.map{|p| [p.name, p.id]} %><br />
+    </div>
+    <div id="player_1_wins">
+      <%= label_tag :player_wins %><br />
+      <%= text_field_tag :player_wins %>
+    </div>
+    <div id="player_2_wins">
+      <%= label_tag :opponent_wins %><br />
+      <%= text_field_tag :opponent_wins %>
+    </div>
+    <div class="new_match_submit">
+      <%= f.submit :id => "match_submit"%>
+    </div>
+    <% end %>
+ </div>
 </div>
