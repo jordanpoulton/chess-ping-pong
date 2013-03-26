@@ -162,17 +162,20 @@ div.ui-widget-overlay {
   background-color: black;
   text-align: center;
   background-image: none;
+  border: 0px;
 }
 
 .ui-dialog-title {
   background-color: black;
   color: #5dfc0a;
   font-size: 2em;
+  text-align: center;
 }
 
 .ui-widget-header {
   background-color: black;
   background-image: none;
+  border: 0px;
 }
 
 .ui-button-text {
@@ -184,14 +187,44 @@ div#dialog-message {
   background-color: black;
 }
 
-#league_table {
-  border: 2px solid #efefef;
+//World Ranking Table Styling
+
+#league_table_div {
+  border: 5px solid #5dfc0a;
   display: inline-block;
   padding:25px;
+  color: #5dfc0a;
 }
-#league_table_contents {
-  color: #5dfc0a ;
+
+title#world_ranking_title {
+  color: #5dfc0a;
+  border: 0px;
+  text-align: center;
 }
+
+table#league_table {
+  text-align: left;
+  padding: 5px;
+  margin: 5px;
+}
+
+table#league_table th {
+  color: #5dfc0a;
+  font-size: 1.5em;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #5dfc0a ;
+}
+table#league_table th:nth-child(2) {
+  border-bottom: 5px solid #5dfc0a;
+  font-style: bold;
+}
+
+table#league_table tr td {
+  width: 100%;
+  padding: 5px 0px;
+}
+
+//Other at the moment, will become mroe important later
 
 #new_player {
   border: 2px solid black;
