@@ -5,23 +5,7 @@
 @import url(http://fonts.googleapis.com/css?family=Play:400,700|Press+Start+2P);
 //Two available fonts now: Play and Press Start 2P;
 
-#league_table {
-  border: 2px solid #efefef;
-  display: inline-block;
-  padding:25px;
-}
 
-#new_player {
-  border: 2px solid black;
-  display: inline-block;
-  padding: 30px;
-}
-
-#new_match {
-  border: 2px solid black;
-  display: inline-block;
-  padding: 30px;
-}
 
 * {
   color:white;
@@ -158,6 +142,65 @@ div#close {
   right:-7px;
 }
 
-#dialog-message {
+//Overlay Styling
+
+div.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #efefef;
+  opacity: 0.6;
+}
+
+.ui-front {
+  z-index: 100;
+}
+
+.ui-widget-content {
+  background-color: black;
+  text-align: center;
+  background-image: none;
+}
+
+.ui-dialog-title {
+  background-color: black;
+  color: #5dfc0a;
+  font-size: 2em;
+}
+
+.ui-widget-header {
+  background-color: black;
+  background-image: none;
+}
+
+.ui-button-text {
+  color: black;
+}
+
+div#dialog-message {
   display: none;
+  background-color: black;
+}
+
+#league_table {
+  border: 2px solid #efefef;
+  display: inline-block;
+  padding:25px;
+}
+#league_table_contents {
+  color: #5dfc0a ;
+}
+
+#new_player {
+  border: 2px solid black;
+  display: inline-block;
+  padding: 30px;
+}
+
+#new_match {
+  border: 2px solid black;
+  display: inline-block;
+  padding: 30px;
 }
