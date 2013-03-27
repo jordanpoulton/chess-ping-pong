@@ -4,6 +4,7 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
+    @players = Player.limit(10).sort {|a,b| b.rating<=>a.rating}
   end
 
   def create
