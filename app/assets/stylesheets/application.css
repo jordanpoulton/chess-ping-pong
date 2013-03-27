@@ -12,5 +12,9 @@
  *= require_tree .
  */
 
-
+div#login {
+  font-size: 0.5em;
+  text-align: right;
+  margin-right: 10%;
+}
 

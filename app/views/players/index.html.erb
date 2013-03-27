@@ -10,11 +10,7 @@
   <div id="ball"></div>
 </div>
 
-<div id="options-wrapper">
-  <div class="home_page_options"><%= link_to "World Rankings", world_ranking_path, :id => 'world-rankings' %></div>
-  <div class="home_page_options"><%= link_to "Add a game", new_match_path %></div>
-  <div class="home_page_options"><%= link_to "Create new player", new_player_path %></div>
-</div>
+
 
 <%= render :partial => "world_rankings_dialog" %>
 

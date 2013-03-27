@@ -1,0 +1,26 @@
+<div id="dialog-message" title="World Rankings: Top 10">
+  <p>
+    <div id="league_table_div">
+  <title id="world-ranking-title">World Rankings</title>
+
+  <table id="league_table">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>rating</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <% @players.each do |player| %>
+        <tr>
+          <td><%= player.name %></td>
+          <td><%= player.rating.to_s %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  </p>
+</div>

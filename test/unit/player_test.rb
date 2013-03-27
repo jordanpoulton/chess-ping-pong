@@ -41,4 +41,10 @@ class PlayerTest < ActiveSupport::TestCase
     assert_equal(100, player_1.rating)
   end
 
+  test "rating is set on create" do
+    player = Player.create(:name => "Test", :password => 'test', :confirm_password => 'test')
+    assert_equal 100, player.rating
+    assert player.valid?
+  end
+
 end

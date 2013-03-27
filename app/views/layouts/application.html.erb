@@ -11,9 +11,27 @@
 
 </head>
 <body>
-  <h1 id="title"> International Ping Pong Rankings </h1>
+  <h1 id="title"> <%= link_to "International Ping Pong Rankings", root_path %> </h1>
+
+  <div id="login">
+    <% if current_player? %>
+      <%= link_to "Logout", '/logout' %>
+    <% else %>
+      <%= link_to "Login", 'sessions#new' %>
+      <%= link_to "Join", 'join'%>
+    <%end%>
+  </div>
 
 <%= yield %>
 
+
+<%= render :partial => "layouts/world_rankings_dialog" %>
+<footer>
+  <div id="options-wrapper">
+  <div class="home_page_options"><%= link_to "World Rankings", world_ranking_path, :id => 'world-rankings' %></div>
+  <div class="home_page_options"><%= link_to "Add a game", new_match_path %></div>
+  <div class="home_page_options"><%= link_to "Create new player", new_player_path %></div>
+</div>
+</footer>
 </body>
 </html>

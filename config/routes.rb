@@ -1,11 +1,15 @@
 ChessPingPong::Application.routes.draw do
 
-  root :to => 'players#index'
+  root :to => 'matches#new'
   match "world_ranking" => "players#world_ranking"
 
+  match 'logout' => 'sessions#destroy'
+  match 'join' => 'players#new'
 
   resources :players
   resources :matches
+  resources :sessions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

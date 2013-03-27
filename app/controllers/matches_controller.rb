@@ -2,7 +2,7 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
-    @players = Player.all
+    @players = Player.limit(10).sort {|a,b| b.rating<=>a.rating}
   end
 
   def index
@@ -22,7 +22,7 @@ class MatchesController < ApplicationController
       match.opponent.update_rating!(match)
       match.save!
     end
-    redirect_to players_path
+    redirect_to root_path
   end
 
 end
