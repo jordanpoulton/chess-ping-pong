@@ -13,8 +13,23 @@
  */
 
 div#login {
-  font-size: 0.5em;
+  font-size: 1em;
   text-align: right;
   margin-right: 10%;
 }
 
+div#logout {
+  font-size: 1em;
+  text-align: right;
+  margin-right: 10%;
+}
+
+div#all_players{
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+}
+
+#notice {
+  color: #FF1CAE ;
+}

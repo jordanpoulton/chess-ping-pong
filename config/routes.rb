@@ -1,6 +1,6 @@
 ChessPingPong::Application.routes.draw do
 
-  root :to => 'players#world_ranking'
+  root :to => 'matches#new'
   match "world_ranking" => "players#world_ranking"
 
   match 'logout' => 'sessions#destroy'

@@ -13,33 +13,38 @@
 <body>
   <h1 id="title"> <%= link_to "International Ping Pong Rankings", root_path %> </h1>
 
-  <div id="login">
-    <% if current_player? %>
+  <%= render :partial => "layouts/login_form" %>
+
+
+  <% if current_player? %>
+    <div id="logout">
       <%= link_to "Logout", '/logout' %>
-    <% else %>
+    </div>
+  <% else %>
+    <div id="login">
       <%= link_to "Login", '/login' %>
-      <%= link_to "Join", '/join'%>
-    <%end%>
+    </div>
+  <%end%>
+
+<%if flash[:notice] %>
+  <div id="notice">
+    <%= flash[:notice] %>
   </div>
+<% end %>
 
-  <div>
-    <%if flash[:notice] %>
-      <%= flash[:notice] %>
-    <% end %>
-  </div>
-
-<%= yield %>
+  <%= yield %>
 
 
-<%= render :partial => "layouts/world_rankings_dialog" %>
-<%= render :partial => "layouts/new_player_form" %>
+  <%= render :partial => "layouts/world_rankings_dialog" %>
+  <%= render :partial => "layouts/new_player_form" %>
 
-<footer>
-  <div id="options-wrapper">
-  <div class="home_page_options"><%= link_to "World Rankings", world_ranking_path, :id => 'world-rankings' %></div>
-  <div class="home_page_options"><%= link_to "Add a game", new_match_path %></div>
-  <div class="home_page_options"><%= link_to "Create new player", new_player_path, :id => 'new-player' %></div>
-</div>
-</footer>
+
+  <footer>
+    <div id="options-wrapper">
+      <div class="home_page_options"><%= link_to "World Rankings", world_ranking_path, :id => 'world-rankings' %></div>
+      <div class="home_page_options"><%= link_to "Add a game", new_match_path %></div>
+      <div class="home_page_options"><%= link_to "Create new player", new_player_path, :id => 'new-player' %></div>
+    </div>
+  </footer>
 </body>
 </html>

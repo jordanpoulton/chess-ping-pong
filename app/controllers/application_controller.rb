@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_all_players
-    @players = Player.all
+    @players = Player.all.sort {|a,b| b.rating<=>a.rating}
   end
 
   def get_new_player_for_modal_form
