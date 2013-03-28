@@ -17,20 +17,28 @@
     <% if current_player? %>
       <%= link_to "Logout", '/logout' %>
     <% else %>
-      <%= link_to "Login", 'sessions#new' %>
-      <%= link_to "Join", 'join'%>
+      <%= link_to "Login", '/login' %>
+      <%= link_to "Join", '/join'%>
     <%end%>
+  </div>
+
+  <div>
+    <%if flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
   </div>
 
 <%= yield %>
 
 
 <%= render :partial => "layouts/world_rankings_dialog" %>
+<%= render :partial => "layouts/new_player_form" %>
+
 <footer>
   <div id="options-wrapper">
   <div class="home_page_options"><%= link_to "World Rankings", world_ranking_path, :id => 'world-rankings' %></div>
   <div class="home_page_options"><%= link_to "Add a game", new_match_path %></div>
-  <div class="home_page_options"><%= link_to "Create new player", new_player_path %></div>
+  <div class="home_page_options"><%= link_to "Create new player", new_player_path, :id => 'new-player' %></div>
 </div>
 </footer>
 </body>

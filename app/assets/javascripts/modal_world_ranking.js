@@ -10,7 +10,7 @@ $(function() {
           $( this ).dialog( "close" );
         },
         More: function() {
-          window.location = ""
+          window.location = "/world_ranking"
           $(id).click();
         }
       }

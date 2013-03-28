@@ -1,4 +1,4 @@
-<div id="dialog-message" title="World Rankings: Top 10">
+<div id="dialog-message" class="modal" title="World Rankings: Top 10">
   <p>
     <div id="league_table_div">
   <title id="world-ranking-title">World Rankings</title>
@@ -13,7 +13,7 @@
 
     <tbody>
 
-        <% @players.each do |player| %>
+        <% @players_top_10.each do |player| %>
         <tr>
           <td><%= player.name %></td>
           <td><%= player.rating.to_s %></td>

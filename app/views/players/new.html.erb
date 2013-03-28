@@ -1,20 +1,2 @@
-<div id="new_player">
-  <%= form_for(@player) do |f| %>
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.text_field :password %>
-    </div>
-    <div class="field">
-      <%= f.label :confirm_password %><br />
-      <%= f.text_field :confirm_password %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Go" %>
-    </div>
-  <% end %>
-</div>
+<%= render "new_player_form" %>
 

@@ -3,41 +3,32 @@ require 'digest/sha1'
 class PlayersController < ApplicationController
 
   def new
-    @player = Player.new
-    @players = Player.limit(10).sort {|a,b| b.rating<=>a.rating}
+    @player = Player.new #Player object for user to create their profile
   end
 
   def create
-    @player = Player.new
-    unless params[:player][:password] == params[:player][:confirm_password]
-      render :new, :notice => "Passwords must match"
-      return
-    end
-    @player.name = params[:player][:name]
-    @player.password = params[:player][:password]
+    @player = Player.new(params[:player])
+
     if @player.save
       sign_in!(@player)
-      redirect_to root_path
+      redirect_to root_path, :notice => "Welcome #{@player.name}!! Your current rating is #{@player.rating} - improve it."
     else
-      render :new, :notice => "There was a problem saving"
+      redirect_to new_player_path, :notice => "There was a problem saving"
     end
-  end
 
-  def index
-    @players = Player.limit(10).sort {|a,b| b.rating<=>a.rating}
-    # @player = Player.new
-    @match = Match.new
   end
 
   def world_ranking
-    @players = Player.all.sort {|a,b| b.rating<=>a.rating}
     @player = Player.new
     @match = Match.new
   end
+
+  private
 
   def sign_in!(player)
     session[:player_id] = player.id
     current_player
+    #Set session id and current_player to the player's id and they are signed in.
   end
 
 end

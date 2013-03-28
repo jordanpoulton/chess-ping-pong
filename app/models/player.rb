@@ -1,18 +1,19 @@
 require 'digest/sha1'
 
 class Player < ActiveRecord::Base
-  attr_accessible :name, :rating, :password, :salt, :confirm_password
-
-  attr_accessor :confirm_password
-
-  has_many :matches
-
   K_FACTOR = 32
   MIN_RATING = 100
 
+  attr_accessible :name, :rating, :password, :salt, :password_confirmation
+
+  has_many :matches
+
+  validates :password, :confirmation => true
   validates :rating, :numericality => { :greater_than_or_equal_to => MIN_RATING }
 
   after_initialize :set_min_rating
+  after_validation :hash_password!
+
 
   def set_min_rating
     self.rating ||= MIN_RATING
@@ -22,8 +23,8 @@ class Player < ActiveRecord::Base
     self[:salt] ||= Digest::SHA1.hexdigest Time.now.to_s
   end
 
-  def password=(raw_password)
-    self[:password] = Player.hashed_password(raw_password, salt)
+  def hash_password!
+    self.password = self.class.hashed_password(password, salt)
   end
 
   def self.salted_password(raw_password, salt)

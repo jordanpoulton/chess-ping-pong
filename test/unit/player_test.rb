@@ -42,9 +42,8 @@ class PlayerTest < ActiveSupport::TestCase
   end
 
   test "rating is set on create" do
-    player = Player.create(:name => "Test", :password => 'test', :confirm_password => 'test')
+    player = Player.create(:name => "Test", :password => 'test', :password_confirmation => 'test')
     assert_equal 100, player.rating
-    assert player.valid?
   end
 
 end

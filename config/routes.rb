@@ -5,6 +5,7 @@ ChessPingPong::Application.routes.draw do
 
   match 'logout' => 'sessions#destroy'
   match 'join' => 'players#new'
+  match 'login' => 'sessions#new'
 
   resources :players
   resources :matches, :except => :index

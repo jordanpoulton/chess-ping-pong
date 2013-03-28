@@ -184,7 +184,7 @@ div.ui-widget-overlay {
   color: black;
 }
 
-div#dialog-message {
+.modal {
   display: none;
   background-color: black;
 }
@@ -232,6 +232,26 @@ table#league_table tr td {
   border: 2px solid black;
   display: inline-block;
   padding: 30px;
+}
+
+.new_player{
+  text-align: left;
+}
+
+#new_player_signup_form {
+  border: 5px solid #5dfc0a;
+  color: #5dfc0a;
+  padding: 0% 5%;
+}
+
+#new_player_signup_form div{
+  padding: 5%;
+  color: black;
+}
+
+#player_name, #player_password, #player_password_confirmation, #new_player_submit{
+  color:black;
+  font-family: 'Press Start 2P';
 }
 
 #new_match {

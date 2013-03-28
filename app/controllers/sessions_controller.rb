@@ -4,8 +4,11 @@ class SessionsController < ApplicationController
 
   def create
     if player = Player.authenticate(params[:name], params[:password])
+
       session[:player_id] = player.id
       current_player
+
+      flash[:notice] = "Welcome to the party #{player.name}. Your current rating is #{player.rating}"
       redirect_to root_path
     else
       flash[:notice] = "Failed to login"
@@ -15,6 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     @current_player = session[:player_id] = nil
-    redirect_to root_path
+    redirect_to root_path, :notice => "You've been logged out. Smell ya later"
   end
 end
