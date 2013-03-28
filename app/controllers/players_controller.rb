@@ -23,8 +23,6 @@ class PlayersController < ApplicationController
     @match = Match.new
   end
 
-  private
-
   def sign_in!(player)
     session[:player_id] = player.id
     current_player

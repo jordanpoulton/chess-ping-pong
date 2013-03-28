@@ -5,6 +5,21 @@ class MatchesController < ApplicationController
   end
 
   def create
+    unless current_player?
+      redirect_to root_path, :notice => "You need to log on to create a match"
+      return
+    end
+
+    if params[:match][:player] == params[:match][:opponent]
+      redirect_to root_path, :notice => "You can't beat yourself at Ping Pong, Gump"
+      return
+    end
+
+    unless (current_player.id == params[:match][:player].to_i || current_player.id == params[:match][:opponent].to_i)
+      redirect_to root_path, :notice => "You can only log a match that you've played in"
+      return
+    end
+
     (params[:player_wins].to_i + params[:opponent_wins].to_i).times do |loop|
       match = Match.new
       match.player = Player.find(params[:match][:player])

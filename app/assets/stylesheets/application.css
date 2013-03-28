@@ -31,5 +31,6 @@ div#all_players{
 }
 
 #notice {
-  color: #FF1CAE ;
+  color: #FF1CAE;
+  text-align: center;
 }
