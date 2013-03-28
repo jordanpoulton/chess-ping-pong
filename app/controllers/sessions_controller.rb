@@ -3,6 +3,12 @@ class SessionsController < ApplicationController
   end
 
   def create
+    if params[:password].blank?
+      redirect_to root_path,
+      :notice => "Password can't be empty"
+      return
+    end
+
     if player = Player.authenticate(params[:name], params[:password])
 
       session[:player_id] = player.id
