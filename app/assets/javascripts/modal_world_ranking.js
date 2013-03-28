@@ -8,6 +8,10 @@ $(function() {
       buttons: {
         Ok: function() {
           $( this ).dialog( "close" );
+        },
+        More: function() {
+          window.location = ""
+          $(id).click();
         }
       }
     });

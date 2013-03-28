@@ -1,1 +1,19 @@
-<%= render :partial => 'world_rankings_table' %>
+
+  <table id="league_table">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>rating</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <% @players.each do |player| %>
+        <tr>
+          <td><%= player.name %></td>
+          <td><%= player.rating.to_s %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

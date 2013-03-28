@@ -1,12 +1,8 @@
 class MatchesController < ApplicationController
 
   def new
-    @match = Match.new
-    @players = Player.limit(10).sort {|a,b| b.rating<=>a.rating}
-  end
-
-  def index
-    @matches = Match.all
+    @match = Match.new #Creates a match object for the user to add their info to
+    @players = Player.limit(10).sort {|a,b| b.rating<=>a.rating} #Getting players for world ranking modal popup
   end
 
   def create
